@@ -53,10 +53,7 @@ You can use [the Wasmer CLI] to run your compiled WASI WebAssembly binary.
 wasmer run $WASMERFLAGS . -- --name="Ada Lovelace"
 ```
 
-```sh
-# This is run in CI on each release
-wasmer publish
-```
+Each time a new GitHub release is released it gets `wasmer publish`-ed.
 
 [installed the latest version of the Go toolchain]: https://go.dev/doc/install
 [the wasmer cli]: https://docs.wasmer.io/install
