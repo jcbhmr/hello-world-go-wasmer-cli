@@ -1,0 +1,17 @@
+[package]
+name = "jcbhmr/hello-world-go-wasmer-cli"
+version = "1.0.0"
+description = "👨‍💻 Example CLI application built with Go and distributed via Wasmer"
+license = "0BSD"
+repository = "https://github.com/jcbhmr/hello-world-go-wasmer-cli"
+homepage = "https://github.com/jcbhmr/hello-world-go-wasmer-cli"
+entrypoint = "hello-world-go-wasmer-cli"
+
+[[module]]
+name = "hello-world-go-wasmer-cli"
+source = "./out/hello-world-go-wasmer-cli.wasm"
+
+[[command]]
+name = "hello-world-go-wasmer-cli"
+module = "hello-world-go-wasmer-cli"
+runner = "wasi"

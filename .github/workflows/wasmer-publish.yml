@@ -1,0 +1,19 @@
+name: wasmer publish
+on:
+  release:
+    types: released
+  workflow_dispatch:
+concurrency: ${{ github.workflow }}
+jobs:
+  wasmer-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: wasmerio/setup-wasmer@v3
+      - uses: actions/setup-go@v4
+        with:
+          go-version: "1.21"
+      - run: ./just build
+      - run: wasmer publish
+        env:
+          WASMER_TOKEN: ${{ secrets.WASMER_TOKEN }}
